@@ -23,11 +23,11 @@ ActiveRecord::Schema.define(version: 2019_05_17_140310) do
   end
 
   create_table "doses", force: :cascade do |t|
-    t.string "quantity"
     t.bigint "cocktail_id"
     t.bigint "ingredient_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "quantity"
     t.index ["cocktail_id"], name: "index_doses_on_cocktail_id"
     t.index ["ingredient_id"], name: "index_doses_on_ingredient_id"
   end
