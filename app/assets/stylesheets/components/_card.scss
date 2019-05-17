@@ -6,7 +6,6 @@
 }
 
 .cocktail-card {
-  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('cocktail-card.jpg');
   background-size: cover;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   height: 200px;
@@ -21,6 +20,7 @@
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   }
   a:hover {
+    color: white;
     text-decoration: none;
     opacity: 1;
     border-bottom: 3px solid white;

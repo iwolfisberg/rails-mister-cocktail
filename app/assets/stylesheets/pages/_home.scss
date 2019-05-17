@@ -3,3 +3,18 @@ a {
   color: $gray;
   text-decoration: none;
 }
+
+a:hover {
+  text-decoration:none;
+  color: $orange-cocktail;
+}
+
+.title {
+  padding: 25px 0;
+  text-align: center;
+  font-size: 35px;
+}
+
+.titleh3 {
+  font-size: 22px;
+}

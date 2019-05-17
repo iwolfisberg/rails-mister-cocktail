@@ -8,12 +8,12 @@
   </div>
 </div>
 
-<h2>All the cocktails</h2>
+<h2 class="title">All the cocktails</h2>
 <div class="cocktails-cards">
   <% @cocktails.each do |cocktail| %>
-    <div class="cocktail-card">
+    <div class="cocktail-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+         url('<%= cl_image_path cocktail.photo, height: 200, width: 300, crop: :thumb %>')">
       <p><%= link_to cocktail.name, cocktail_path(cocktail) %></p>
-      <%= link_to "+", cocktail_path(cocktail), method: :delete, data: { confirm: "Are you sure?" }, class:"btn-delete" %>
     </div>
   <% end %>
 </div>

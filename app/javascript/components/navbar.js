@@ -15,9 +15,9 @@ const initUpdateNavbarOnScroll = () => {
   if (cocktails) {
     window.addEventListener('scroll', () => {
       if (window.scrollY >= window.innerHeight) {
-        cocktails.classList.add('link-cocktails-white');
-      } else {
         cocktails.classList.remove('link-cocktails-white');
+      } else {
+        cocktails.classList.add('link-cocktails-white');
       }
     });
   }

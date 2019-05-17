@@ -1,8 +1,12 @@
 <%= render partial: 'navbar' %>
 
-<h1>New dose for <%= @cocktail.name %></h1>
-<%= simple_form_for [@cocktail, @dose] do |f| %>
-<%= f.input :description %>
-<%= f.association :ingredient %>
-<%= f.submit "Create dose", class:"btn btn-primary" %>
-<% end %>
+<div class="form">
+  <h1 class="title">New dose for <%= @cocktail.name %></h1>
+  <div class="form-cocktail">
+    <%= simple_form_for [@cocktail, @dose] do |f| %>
+    <%= f.input :description %>
+    <%= f.association :ingredient %>
+    <%= f.submit "Create dose", class:"btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
