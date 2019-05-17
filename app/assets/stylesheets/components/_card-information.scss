@@ -1,0 +1,39 @@
+.cards-information {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 30px;
+  margin: 50px;
+}
+
+.card-description {
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  height: 200px;
+  padding: 15px;
+  position: relative;
+  a {
+    color: black;
+  }
+  p {
+    margin: 0;
+  }
+}
+
+.social-medias {
+  height: 100%;
+  padding: 15px;
+  a {
+    color: black;
+  }
+  p {
+    margin: 0;
+  }
+  .social-medias-link {
+    display: flex;
+    a {
+      padding-right: 20px;
+    }
+  }
+}
+
+

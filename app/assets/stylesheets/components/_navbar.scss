@@ -1,12 +1,22 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+.navbar-cocktail {
+  background-color: transparent;
+  transition: 0.5s background-color ease;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.navbar-cocktail-white {
+  background-color: white;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.navbar-cocktail ul {
+  padding: 0;
+  margin: 0;
+  padding: 15px;
+  li {
+    list-style: none;
+    margin: 0 15px;
+  }
+}
+
+.link-cocktails-white {
+    color: white;
 }

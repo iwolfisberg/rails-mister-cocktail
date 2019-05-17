@@ -1,0 +1,12 @@
+#btn-cocktail a {
+  border: 3px solid $orange-cocktail;
+  color: $orange-cocktail;
+  border-radius: 5px;
+  padding: 8px;
+}
+
+#btn-cocktail a:hover {
+    color: white;
+    background-color: $orange-cocktail;
+    text-decoration: none;
+  }
