@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_17_090558) do
+ActiveRecord::Schema.define(version: 2019_05_17_140310) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2019_05_17_090558) do
   end
 
   create_table "doses", force: :cascade do |t|
-    t.string "description"
+    t.string "quantity"
     t.bigint "cocktail_id"
     t.bigint "ingredient_id"
     t.datetime "created_at", null: false
@@ -36,6 +36,14 @@ ActiveRecord::Schema.define(version: 2019_05_17_090558) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "recipes", force: :cascade do |t|
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "cocktail_id"
+    t.index ["cocktail_id"], name: "index_recipes_on_cocktail_id"
   end
 
   add_foreign_key "doses", "cocktails"

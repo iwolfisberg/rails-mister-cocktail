@@ -6,6 +6,10 @@
     padding-top: 70px;
     padding-bottom: 0;
   }
+  .link-back {
+    grid-column-start: 2;
+    justify-self: flex-end;
+  }
 }
 
 
@@ -13,3 +17,4 @@
   margin-top: 50px;
   grid-column-start: 2;
 }
+
