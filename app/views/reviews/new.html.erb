@@ -1,0 +1,12 @@
+<%= render partial: 'navbar' %>
+
+<div class="form">
+  <h1 class="title">Review for <%= @cocktail.name %></h1>
+  <div class="form-cocktail">
+    <%= simple_form_for [@cocktail, @review] do |f| %>
+    <%= f.input :content, as: :text, label: 'Your review (max. 120 characters)', input_html: { maxlength: 120, rows: 3 } %>
+    <%= f.input :rating, collection: 1..5 %>
+    <%= f.submit "Create review", class:"btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
