@@ -7,7 +7,7 @@
 
 <div class="cards-information">
   <div class="card-description">
-    <h3 class="titleh3">Recipe:</h3>
+    <h3 class="titleh3">Recipe: <span class="edit_link">(<%= link_to "edit", edit_recipe_path(@recipe) %>)</span></h3>
       <p><%= @recipe.description %></p>
   </div>
   <div class="card-description">
@@ -35,10 +35,18 @@
   </div>
 </div>
 
-<% @reviews.each do |review| %>
-  <%= review.content %>
-  <%= review.rating %>
-<% end %>
+<div class="review">
+  <% if @reviews.size > 1 %>
+    <h4>Reviews: </h4>
+  <% end %>
+  <% @reviews.each do |review| %>
+  <div class="review-content">
+    <% if review.rating != nil %>
+      <p><% (review.rating).times do %><i class="stars fas fa-star"></i><% end %> - <%= review.content %></p>
+      <% end %>
+    </div>
+  <% end %>
+</div>
 
 <div class="form">
   <h1 class="title">Review for <%= @cocktail.name %></h1>

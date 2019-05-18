@@ -16,6 +16,23 @@ class RecipesController < ApplicationController
     end
   end
 
+  def edit
+    @recipe = Recipe.find(params[:id])
+    @cocktail = @recipe.cocktail
+  end
+
+  def update
+    recipe = Recipe.find(params[:id])
+    @cocktail = @recipe.cocktail
+    @recipe.cocktail = @cocktail
+
+    if @recipe.save
+      redirect_to cocktail_path(@cocktail)
+    else
+      render :new
+    end
+  end
+
   private
 
   def recipe_params

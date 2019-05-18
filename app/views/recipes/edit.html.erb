@@ -1,0 +1,11 @@
+<%= render partial: 'navbar' %>
+
+<div class="form">
+  <h1 class="title">Recipe for <%= @cocktail.name %></h1>
+  <div class="form-cocktail">
+    <%= simple_form_for [@recipe] do |f| %>
+    <%= f.input :description, as: :text, input_html: { rows: 4 } %>
+    <%= f.submit "Update recipe", class:"btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

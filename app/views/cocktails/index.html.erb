@@ -1,4 +1,4 @@
-<%= render partial: 'navbar' %>
+<%= render partial: 'navbar_index' %>
 
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
          url('<%= cl_image_path "cocktail_banner_seul4n" %>')">
@@ -15,6 +15,22 @@
     <div class="cocktail-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
          url('<%= cl_image_path cocktail.photo, height: 200, width: 300, crop: :thumb %>')">
       <p><%= link_to cocktail.name, cocktail_path(cocktail) %></p>
+
+      <% cocktail.reviews.each { |review| @sum += review.rating } %>
+      <% @number_of_stars = (@sum / cocktail.reviews.size) if cocktail.reviews.size > 0 %>
+      <div class="cocktail-card-stars">
+        <% if @number_of_stars.positive? %>
+          <p><% @number_of_stars.times do %><i class="stars fas fa-star"></i><% end %>
+            <% if cocktail.reviews.size == 1 %>
+              (<%= cocktail.reviews.size %> review)
+            <% else %>
+              (<%= cocktail.reviews.size %> reviews)
+            <% end %>
+          </p>
+        <% end %>
+        <% @sum = 0 %>
+        <% @number_of_stars = 0 %>
+      </div>
     </div>
   <% end %>
 </div>

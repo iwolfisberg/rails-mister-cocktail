@@ -14,11 +14,16 @@
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+
 import 'bootstrap';
 console.log('Hello World from Webpacker')
 
-import { initUpdateNavbarOnScroll } from '../components/navbar';
+import { initUpdateNavbarOnScroll } from '../components/navbar_index';
 initUpdateNavbarOnScroll();
 
-import { scrollDown } from '../components/banner';
-scrollDown();
+import { initUpdateNavbarOnScrollBis } from '../components/navbar';
+initUpdateNavbarOnScrollBis();
+
+import { initScrollDownOnClick } from '../components/banner_index';
+initScrollDownOnClick();

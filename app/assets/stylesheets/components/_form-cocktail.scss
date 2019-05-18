@@ -1,6 +1,7 @@
 .form {
   display: grid;
   grid-template-columns: 300px auto 300px;
+  margin-bottom: 50px;
   .title {
     grid-column-start: 2;
     padding-top: 70px;
@@ -12,9 +13,8 @@
   }
 }
 
-
 .form-cocktail {
-  margin-top: 50px;
+  margin-bottom: 100px;
   grid-column-start: 2;
 }
 

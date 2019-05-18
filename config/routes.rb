@@ -10,4 +10,5 @@ Rails.application.routes.draw do
     resources :reviews, only: [:new, :create]
   end
   resources :doses, only: [:destroy]
+  resources :recipes, only: [:edit, :update]
 end

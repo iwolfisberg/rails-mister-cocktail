@@ -1,25 +1,15 @@
-const initUpdateNavbarOnScroll = () => {
-  const navbar = document.querySelector('.navbar-cocktail');
-  const cocktails = document.querySelector('.cocktails');
+const initUpdateNavbarOnScrollBis = () => {
+  const navbar = document.querySelector('.navbar-cocktail-bis');
 
   if (navbar) {
     window.addEventListener('scroll', () => {
-      if (window.scrollY >= window.innerHeight) {
+      if (window.scrollY >= 400) {
         console.log(navbar.classList.add('navbar-cocktail-white'));
       } else {
         console.log(navbar.classList.remove('navbar-cocktail-white'));
       }
     });
   }
-  if (cocktails) {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY >= window.innerHeight) {
-        cocktails.classList.remove('link-cocktails-white');
-      } else {
-        cocktails.classList.add('link-cocktails-white');
-      }
-    });
-  }
 }
 
-export { initUpdateNavbarOnScroll };
+export { initUpdateNavbarOnScrollBis };

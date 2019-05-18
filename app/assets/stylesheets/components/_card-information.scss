@@ -19,6 +19,15 @@
   .fas {
     font-size: 15px;
   }
+  .edit_link {
+    font-size: 15px;
+    a {
+      color: $orange-cocktail;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
 .social-medias {
@@ -38,5 +47,7 @@
     }
   }
 }
+
+
 
 
