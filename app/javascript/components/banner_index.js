@@ -4,3 +4,4 @@ const initScrollDownOnClick = () => $( "#link" ).click(function( event ) {
 });
 
 export { initScrollDownOnClick };
+

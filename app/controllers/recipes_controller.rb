@@ -1,4 +1,6 @@
 class RecipesController < ApplicationController
+  before_action :set_recipe, only: [:edit, :update]
+
   def new
     @recipe = Recipe.new
     @cocktail = Cocktail.find(params[:cocktail_id])
@@ -17,14 +19,13 @@ class RecipesController < ApplicationController
   end
 
   def edit
-    @recipe = Recipe.find(params[:id])
     @cocktail = @recipe.cocktail
   end
 
   def update
-    recipe = Recipe.find(params[:id])
     @cocktail = @recipe.cocktail
     @recipe.cocktail = @cocktail
+    @recipe.update(recipe_params)
 
     if @recipe.save
       redirect_to cocktail_path(@cocktail)
@@ -37,5 +38,9 @@ class RecipesController < ApplicationController
 
   def recipe_params
     params.require(:recipe).permit(:description)
+  end
+
+  def set_recipe
+    @recipe = Recipe.find(params[:id])
   end
 end
