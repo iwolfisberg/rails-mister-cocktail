@@ -1,6 +1,5 @@
 const initUpdateNavbarOnScroll = () => {
   const navbar = document.querySelector('.navbar-cocktail');
-  console.log(navbar);
   const cocktails = document.querySelector('.cocktails');
 
   if (navbar) {

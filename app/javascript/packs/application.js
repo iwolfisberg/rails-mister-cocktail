@@ -19,3 +19,6 @@ console.log('Hello World from Webpacker')
 
 import { initUpdateNavbarOnScroll } from '../components/navbar';
 initUpdateNavbarOnScroll();
+
+import { scrollDown } from '../components/banner';
+scrollDown();
