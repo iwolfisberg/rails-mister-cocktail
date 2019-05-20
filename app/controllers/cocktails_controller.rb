@@ -1,17 +1,17 @@
 class CocktailsController < ApplicationController
-  def index
-    @cocktails = Cocktail.all
-    @sum ||= 0
+  before_action :set_cocktail, only: [:show, :destroy]
 
+  def index
     if params[:search]
       @cocktails = Cocktail.where('name LIKE ?', "%#{params[:search]}%")
     else
       @cocktails = Cocktail.all
     end
+
+    @sum ||= 0
   end
 
   def show
-    @cocktail = Cocktail.find(params[:id])
     @doses = @cocktail.doses
     @recipe = @cocktail.recipe
     @review = @cocktail.reviews.build
@@ -33,7 +33,6 @@ class CocktailsController < ApplicationController
   end
 
   def destroy
-    @cocktail = Cocktail.find(params[:id])
     @cocktail.delete
 
     redirect_to cocktail_path
@@ -43,5 +42,9 @@ class CocktailsController < ApplicationController
 
   def cocktail_params
     params.require(:cocktail).permit(:name, :photo)
+  end
+
+  def set_cocktail
+    @cocktail = Cocktail.find(params[:id])
   end
 end

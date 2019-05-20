@@ -5,9 +5,9 @@ const initUpdateNavbarOnScroll = () => {
   if (navbar) {
     window.addEventListener('scroll', () => {
       if (window.scrollY >= window.innerHeight) {
-        console.log(navbar.classList.add('navbar-cocktail-white'));
+        navbar.classList.add('navbar-cocktail-white');
       } else {
-        console.log(navbar.classList.remove('navbar-cocktail-white'));
+        navbar.classList.remove('navbar-cocktail-white');
       }
     });
   }

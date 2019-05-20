@@ -1,14 +1,13 @@
 class RecipesController < ApplicationController
   before_action :set_recipe, only: [:edit, :update]
+  before_action :set_cocktail, only: [:new, :create]
 
   def new
     @recipe = Recipe.new
-    @cocktail = Cocktail.find(params[:cocktail_id])
   end
 
   def create
     @recipe = Recipe.new(recipe_params)
-    @cocktail = Cocktail.find(params[:cocktail_id])
     @recipe.cocktail = @cocktail
 
     if @recipe.save
@@ -24,7 +23,6 @@ class RecipesController < ApplicationController
 
   def update
     @cocktail = @recipe.cocktail
-    @recipe.cocktail = @cocktail
     @recipe.update(recipe_params)
 
     if @recipe.save
@@ -42,5 +40,9 @@ class RecipesController < ApplicationController
 
   def set_recipe
     @recipe = Recipe.find(params[:id])
+  end
+
+  def set_cocktail
+    @cocktail = Cocktail.find(params[:cocktail_id])
   end
 end

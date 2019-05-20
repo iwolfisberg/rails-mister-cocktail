@@ -27,12 +27,3 @@ initScrollDownOnClick();
 import 'select2/dist/css/select2.css';
 import { initSelect2 } from '../components/init_select2';
 initSelect2();
-
-// $(document).ready(function() {
-//   const tag = document.querySelector('.select2');
-//   console.log(tag);
-//   $('select.select2').select2({
-//     placeholder: "Choose an ingredient",
-//     allowClear: true
-//   });
-// });
